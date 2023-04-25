@@ -23,6 +23,36 @@
       ],
       "@app/server/config/*": [
         "libs/server/config/src/*"
+      ],
+      "@app/server/entities": [
+        "libs/server/entities/src"
+      ],
+      "@app/server/entities/*": [
+        "libs/server/entities/src/*"
+      ],
+      "@app/server/decorators": [
+        "libs/server/decorators/src"
+      ],
+      "@app/server/decorators/*": [
+        "libs/server/decorators/src/*"
+      ],
+      "@app/server/dto": [
+        "libs/server/dto/src"
+      ],
+      "@app/server/dto/*": [
+        "libs/server/dto/src/*"
+      ],
+      "@app/server/subscribers": [
+        "libs/server/subscribers/src"
+      ],
+      "@app/server/subscribers/*": [
+        "libs/server/subscribers/src/*"
+      ],
+      "@app/server/interfaces": [
+        "libs/server/interfaces/src"
+      ],
+      "@app/server/interfaces/*": [
+        "libs/server/interfaces/src/*"
       ]
     }
   }

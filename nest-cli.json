@@ -27,6 +27,51 @@
       "compilerOptions": {
         "tsConfigPath": "libs/server/config/tsconfig.lib.json"
       }
+    },
+    "entities": {
+      "type": "library",
+      "root": "libs/server/entities",
+      "entryFile": "index",
+      "sourceRoot": "libs/server/entities/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/server/entities/tsconfig.lib.json"
+      }
+    },
+    "decorators": {
+      "type": "library",
+      "root": "libs/server/decorators",
+      "entryFile": "index",
+      "sourceRoot": "libs/server/decorators/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/server/decorators/tsconfig.lib.json"
+      }
+    },
+    "dto": {
+      "type": "library",
+      "root": "libs/server/dto",
+      "entryFile": "index",
+      "sourceRoot": "libs/server/dto/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/server/dto/tsconfig.lib.json"
+      }
+    },
+    "subscribers": {
+      "type": "library",
+      "root": "libs/server/subscribers",
+      "entryFile": "index",
+      "sourceRoot": "libs/server/subscribers/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/server/subscribers/tsconfig.lib.json"
+      }
+    },
+    "interfaces": {
+      "type": "library",
+      "root": "libs/server/interfaces",
+      "entryFile": "index",
+      "sourceRoot": "libs/server/interfaces/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/server/interfaces/tsconfig.lib.json"
+      }
     }
   }
 }

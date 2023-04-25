@@ -21,10 +21,14 @@
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/typeorm": "^9.0.1",
+    "pg": "^8.10.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "typeorm": "^0.3.15"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
@@ -70,7 +74,12 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "^@app/server/config(|/.*)$": "<rootDir>/libs/server/config/src/$1"
+      "^@app/server/config(|/.*)$": "<rootDir>/libs/server/config/src/$1",
+      "^@app/server/entities(|/.*)$": "<rootDir>/libs/server/entities/src/$1",
+      "^@app/server/decorators(|/.*)$": "<rootDir>/libs/server/decorators/src/$1",
+      "^@app/server/dto(|/.*)$": "<rootDir>/libs/server/dto/src/$1",
+      "^@app/server/subscribers(|/.*)$": "<rootDir>/libs/server/subscribers/src/$1",
+      "^@app/server/interfaces(|/.*)$": "<rootDir>/libs/server/interfaces/src/$1"
     }
   }
 }
