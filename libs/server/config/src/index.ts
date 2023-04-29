@@ -1,1 +1,1 @@
-export * from './lib/typeorm/typeorm.config';
+export * from './lib/typeorm/typeorm.module';

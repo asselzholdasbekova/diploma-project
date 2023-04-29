@@ -10,10 +10,10 @@ export default abstract class OfferEntity extends BaseEntity {
     @Column({ type: 'text' })
     description: string;
 
-    @ManyToOne(() => LocationEntity, (location) => location.id)
-    @JoinColumn({ name: 'location_id' })
-    location: LocationEntity;
+    // @ManyToOne(() => LocationEntity, (location) => location.id)
+    // @JoinColumn({ name: 'location_id' })
+    // location: LocationEntity;
 
-    @OneToMany(() => ReviewEntity, (review) => review.offer)
-    reviews: ReviewEntity[];
+    // @OneToMany(() => ReviewEntity, (review) => review.offer)
+    // reviews: ReviewEntity[];
 }
