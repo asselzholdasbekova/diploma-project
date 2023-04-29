@@ -1,4 +1,7 @@
 import { Entity } from "typeorm";
+import OfferEntity from "./offer.entity";
 
-@Entity('products')
-export class Product {}
+@Entity({ name: 'products' })
+export class ProductEntity extends OfferEntity {
+
+}
