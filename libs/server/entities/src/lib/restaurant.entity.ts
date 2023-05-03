@@ -136,7 +136,8 @@ export class RestaurantEntity extends BaseEntity {
     status: RestaurantStatus;
 
     @Column({
-        name: 'status_reason'
+        name: 'status_reason',
+        type: 'text'
     })
     statusReason: string;
 }
