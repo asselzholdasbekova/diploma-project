@@ -140,4 +140,7 @@ export class RestaurantEntity extends BaseEntity {
         type: 'text'
     })
     statusReason: string;
+
+    @Column()
+    website: string;
 }

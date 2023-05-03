@@ -35,4 +35,7 @@ export class ProductEntity extends BaseEntity {
         type: 'text'
     })
     statusReason: string;
+
+    @Column()
+    website: string;
 }
