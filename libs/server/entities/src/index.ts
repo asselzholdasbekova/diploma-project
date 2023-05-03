@@ -5,3 +5,4 @@ export * from './lib/prayer-room.entity';
 export * from './lib/location.entity';
 export * from './lib/review.entity';
 export * from './lib/request.entity';
+export * from './lib/info.entity';

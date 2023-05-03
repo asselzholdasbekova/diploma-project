@@ -1,5 +1,6 @@
-import { Column, Entity } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
 import BaseEntity from "./base.entity";
+import { InfoEntity } from "./info.entity";
 
 @Entity({ name: 'requests' })
 export class RequestEntity extends BaseEntity {
@@ -9,13 +10,18 @@ export class RequestEntity extends BaseEntity {
     @Column()
     email: string;
 
-    // @ManyToOne(() => OfferEntity, (offer) => offer.id)
-    // @JoinColumn({ name: 'offer_id' })
-    // offer: OfferEntity;
+    @ManyToOne(
+        () => InfoEntity, 
+        (info) => info.id
+    )
+    @JoinColumn({ name: 'info_id' })
+    info: InfoEntity;
 
     @Column()
     status: string         // tozhe enum dolzhno byt
 
-    @Column({ type: 'text' })
+    @Column({ 
+        type: 'text' 
+    })
     reason: string
 }
