@@ -2,6 +2,13 @@ import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
 import BaseEntity from "./base.entity";
 import { InfoEntity } from "./info.entity";
 
+export enum RequestStatus {
+    HALAL = 'Halal',
+    JAIZ = 'Jaiz',
+    MUSHBOOH = 'Mushbooh',
+    HARAM = 'Haram',
+}
+
 @Entity({ name: 'requests' })
 export class RequestEntity extends BaseEntity {
     @Column()
@@ -14,14 +21,20 @@ export class RequestEntity extends BaseEntity {
         () => InfoEntity, 
         (info) => info.id
     )
-    @JoinColumn({ name: 'info_id' })
+    @JoinColumn({ 
+        name: 'info_id' 
+    })
     info: InfoEntity;
 
-    @Column()
-    status: string         // tozhe enum dolzhno byt
+    @Column({
+        type: 'enum',
+        enum: RequestStatus
+    })
+    status: RequestStatus
 
     @Column({ 
-        type: 'text' 
+        name: 'status_reason',
+        type: 'text'
     })
-    reason: string
+    statusReason: string
 }
