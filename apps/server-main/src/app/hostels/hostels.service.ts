@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreateHostelRequestDto } from './dto/create-hostel-request.dto';
 import { UpdateHosteRequestDto } from './dto/update-hostel-request.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { HostelEntity, InfoEntity, LocationEntity } from '@app/server/entities';
+import { HostelEntity, InfoEntity } from '@app/server/entities';
 import { Repository } from 'typeorm';
 
 @Injectable()

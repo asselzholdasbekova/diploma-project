@@ -1,5 +1,4 @@
 import { InfoDto, LocationDto, ProductDto, RestaurantDto } from "@app/server/dto"
-import { RestaurantEntity } from "@app/server/entities"
 import { PickType } from "@nestjs/swagger"
 
 class CreateRestaurantLocationRequestDto extends PickType(LocationDto, [
