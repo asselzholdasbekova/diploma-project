@@ -4,6 +4,7 @@ import { ProductsModule } from "./products/products.module";
 import { HostelsModule } from "./hostels/hostels.module";
 import { PrayerRoomsModule } from "./prayer-rooms/prayer-rooms.module";
 import { TypeOrmConfigModule } from "@app/server/config";
+import { LocationsModule } from "./locations/locations.module";
 
 @Module({
     imports: [
@@ -11,7 +12,8 @@ import { TypeOrmConfigModule } from "@app/server/config";
         RestaurantsModule,
         ProductsModule,
         HostelsModule,
-        PrayerRoomsModule
+        PrayerRoomsModule,
+        LocationsModule
     ],
     controllers: [],
     providers: [],

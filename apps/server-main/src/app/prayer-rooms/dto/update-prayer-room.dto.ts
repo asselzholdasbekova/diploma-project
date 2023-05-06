@@ -1,4 +1,4 @@
 import { PartialType } from '@nestjs/mapped-types';
-import { CreatePrayerRoomDto } from './create-prayer-room.dto';
+import { CreatePrayerRoomRequestDto } from './create-prayer-room.dto';
 
-export class UpdatePrayerRoomDto extends PartialType(CreatePrayerRoomDto) {}
+export class UpdatePrayerRoomRequestDto extends PartialType(CreatePrayerRoomRequestDto) {}

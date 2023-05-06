@@ -1,14 +1,11 @@
 import { HostelEntity } from "@app/server/entities";
 import { BaseDto } from "./base.dto";
 import { InfoDto } from "./info.dto";
-import { IsBoolean, IsNumber, IsString } from "class-validator";
+import { IsBoolean, IsNumber, IsOptional, IsString } from "class-validator";
 import { RestaurantDto } from "./restaurant.dto";
 
 export class HostelDto extends BaseDto implements HostelEntity {
     readonly info: InfoDto;
-
-    @IsBoolean()
-    readonly hasRestaurant: boolean;
 
     readonly restaurant: RestaurantDto;
 

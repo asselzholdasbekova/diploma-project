@@ -1,15 +1,15 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { PrayerRoomsService } from './prayer-rooms.service';
-import { CreatePrayerRoomDto } from './dto/create-prayer-room.dto';
-import { UpdatePrayerRoomDto } from './dto/update-prayer-room.dto';
+import { CreatePrayerRoomRequestDto } from './dto/create-prayer-room.dto';
+import { UpdatePrayerRoomRequestDto } from './dto/update-prayer-room.dto';
 
 @Controller('prayer-rooms')
 export class PrayerRoomsController {
   constructor(private readonly prayerRoomsService: PrayerRoomsService) {}
 
   @Post()
-  create(@Body() createPrayerRoomDto: CreatePrayerRoomDto) {
-    return this.prayerRoomsService.create(createPrayerRoomDto);
+  create(@Body() dto: CreatePrayerRoomRequestDto) {
+    return this.prayerRoomsService.create(dto);
   }
 
   @Get()
@@ -18,17 +18,20 @@ export class PrayerRoomsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.prayerRoomsService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    return this.prayerRoomsService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePrayerRoomDto: UpdatePrayerRoomDto) {
-    return this.prayerRoomsService.update(+id, updatePrayerRoomDto);
+  update(
+    @Param('id') id: number, 
+    @Body() dto: UpdatePrayerRoomRequestDto
+  ) {
+    return this.prayerRoomsService.update(id, dto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.prayerRoomsService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.prayerRoomsService.remove(id);
   }
 }

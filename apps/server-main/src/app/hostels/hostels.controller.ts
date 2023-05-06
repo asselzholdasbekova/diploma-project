@@ -1,15 +1,15 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { HostelsService } from './hostels.service';
-import { CreateHostelDto } from './dto/create-hostel.dto';
-import { UpdateHostelDto } from './dto/update-hostel.dto';
+import { CreateHostelRequestDto } from './dto/create-hostel-request.dto';
+import { UpdateHosteRequestDto } from './dto/update-hostel-request.dto';
 
 @Controller('hostels')
 export class HostelsController {
   constructor(private readonly hostelsService: HostelsService) {}
 
   @Post()
-  create(@Body() createHostelDto: CreateHostelDto) {
-    return this.hostelsService.create(createHostelDto);
+  create(@Body() dto: CreateHostelRequestDto) {
+    return this.hostelsService.create(dto);
   }
 
   @Get()
@@ -18,17 +18,20 @@ export class HostelsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: number) {
     return this.hostelsService.findOne(+id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateHostelDto: UpdateHostelDto) {
-    return this.hostelsService.update(+id, updateHostelDto);
+  update(
+    @Param('id') id: number, 
+    @Body() dto: UpdateHosteRequestDto
+  ) {
+    return this.hostelsService.update(id, dto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.hostelsService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.hostelsService.remove(id);
   }
 }

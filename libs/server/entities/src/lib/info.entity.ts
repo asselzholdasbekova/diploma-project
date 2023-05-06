@@ -24,6 +24,8 @@ export class InfoEntity extends BaseEntity {
     )
     reviews: ReviewEntity[];
 
-    @Column()
+    @Column({
+        nullable: true
+    })
     rating: number;
 }

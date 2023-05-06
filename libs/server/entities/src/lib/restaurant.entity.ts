@@ -62,7 +62,7 @@ export class RestaurantEntity extends BaseEntity {
     @Column({
         name: 'open_time'
     })
-    opentTime: string;
+    openTime: string;
 
     @Column({
         name: 'average_check'
@@ -78,7 +78,8 @@ export class RestaurantEntity extends BaseEntity {
     @Column({
         type: 'enum',
         array: true,
-        enum: RestaurantMeal
+        enum: RestaurantMeal,
+        nullable: true
     })
     meals: RestaurantMeal[];
 
@@ -93,14 +94,19 @@ export class RestaurantEntity extends BaseEntity {
         name: 'dietary_restrictions',
         type: 'enum',
         array: true,
-        enum: RestaurantDietaryRestriction
+        enum: RestaurantDietaryRestriction,
+        nullable: true
     })
     dietaryRestrictions: RestaurantDietaryRestriction[]
 
-    @Column()
+    @Column({
+        nullable: true
+    })
     reservation: string;
 
-    @Column()
+    @Column({
+        nullable: true
+    })
     delivery: string;
 
     @Column({
@@ -120,13 +126,10 @@ export class RestaurantEntity extends BaseEntity {
     })
     hasParking: boolean;
 
-    @Column({
-        name: 'has_prayer_room'
-    })
-    hasPrayerRoom: boolean;
-
     @OneToOne(() => PrayerRoomEntity)
-    @JoinColumn({ name: 'prayer_room_id' })
+    @JoinColumn({ 
+        name: 'prayer_room_id'
+    })
     prayerRoom: PrayerRoomEntity;
 
     @Column({

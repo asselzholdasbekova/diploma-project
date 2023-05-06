@@ -8,7 +8,7 @@ export class RestaurantDto extends BaseDto implements RestaurantEntity {
     readonly info: InfoDto;
 
     @IsString()
-    readonly opentTime: string;
+    readonly openTime: string;
 
     @IsNumber()
     readonly averageCheck: number;
@@ -39,9 +39,6 @@ export class RestaurantDto extends BaseDto implements RestaurantEntity {
 
     @IsBoolean()
     readonly hasParking: boolean;
-
-    @IsBoolean()
-    readonly hasPrayerRoom: boolean;
 
     readonly prayerRoom: PrayerRoomDto;
 

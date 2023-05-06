@@ -9,11 +9,6 @@ export class HostelEntity extends BaseEntity {
     @JoinColumn({ name: 'info_id' })
     info: InfoEntity;
 
-    @Column({
-        name: 'has_restaurant'
-    })
-    hasRestaurant: boolean;
-
     @OneToOne(() => RestaurantEntity)
     @JoinColumn({ name: 'restaurant_id' })
     restaurant: RestaurantEntity;
